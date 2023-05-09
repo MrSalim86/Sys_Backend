@@ -26,7 +26,7 @@ public class CarResource {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
       public Response getCar() throws Exception {
-        CarDTO cardto = FACADE.createCarDTO(FACADE.fetchData("https://carapi.app/api/makes"));
+        CarDTO cardto = FACADE.createCarDTO(FACADE.fetchData("https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMake/mercedes?format=json"));
         System.out.println(cardto);
         CarApiDTO car = new CarApiDTO(cardto);
         return Response.ok().entity(car).build();
@@ -38,7 +38,7 @@ public class CarResource {
     @Path("user")
     @RolesAllowed("user")
     public Response getFromUser() throws IOException {
-        CarDTO cardto = FACADE.createCarDTO(FACADE.fetchData("https://carapi.app/api/makes"));
+        CarDTO cardto = FACADE.createCarDTO(FACADE.fetchData("https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMake/mercedes?format=json"));
         System.out.println(cardto);
         System.out.println("This is an endpoint only for users");
         CarApiDTO car = new CarApiDTO(cardto);

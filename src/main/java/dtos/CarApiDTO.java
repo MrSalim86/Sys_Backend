@@ -2,28 +2,19 @@ package dtos;
 
 public class CarApiDTO {
 
-    private int id;
     private int make_id;
-    private String name;
+    private String Make_Name;
+    private int Model_ID;
+    private String Model_Name;
 
-    public CarApiDTO(int id, int make_id, String name) {
-        this.id = id;
-        this.make_id = make_id;
-        this.name = name;
+    public CarApiDTO(CarDTO CDTO) {
+        this.make_id = CDTO.getMake_id();
+        this.Make_Name = CDTO.getMake_Name();
+        this.Model_ID = CDTO.getModel_ID();
+        this.Model_Name = CDTO.getModel_Name();
     }
 
-    public CarApiDTO() {
-    }
-
-    public CarApiDTO(CarDTO cardto) {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public CarApiDTO(CarApiDTO carapidto) {
     }
 
     public int getMake_id() {
@@ -34,20 +25,27 @@ public class CarApiDTO {
         this.make_id = make_id;
     }
 
-    public String getName() {
-        return name;
+    public String getMake_Name() {
+        return Make_Name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMake_Name(String make_Name) {
+        Make_Name = make_Name;
     }
 
-    @Override
-    public String toString() {
-        return "CarApiDTO{" +
-                "id=" + id +
-                ", make_id=" + make_id +
-                ", name='" + name + '\'' +
-                '}';
+    public int getModel_ID() {
+        return Model_ID;
+    }
+
+    public void setModel_ID(int model_ID) {
+        Model_ID = model_ID;
+    }
+
+    public String getModel_Name() {
+        return Model_Name;
+    }
+
+    public void setModel_Name(String model_Name) {
+        Model_Name = model_Name;
     }
 }
